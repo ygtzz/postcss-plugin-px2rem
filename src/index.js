@@ -53,7 +53,7 @@ const blacklistedProp = (blacklist, prop) => {
   if (typeof prop !== 'string') return false;
 
   return blacklist.some(regex => {
-    if (typeof regex === 'string') return prop.indexOf(regex) !== -1;
+    if (typeof regex === 'string') return prop == regex;
 
     return prop.match(regex);
   });
